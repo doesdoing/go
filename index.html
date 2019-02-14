@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $.ajax({
+            url: 'http://127.0.0.1:8080/123?a=1',
+            type: 'GET',
+            timeout: '2000',
+            dataType: 'JSONP',
+            jsonp: "Callback",
+            jsonpCallback: "callback",
+            success: function (data) {
+                //  document.write(data[3]['who'])
+                console.log(data);
+            },
+            error: function (err) {
+                console.log('err');
+            }
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
